@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-link {
+    @apply text-lg py-2 mx-8 flex font-semibold group-hover:text-sky-500 group-hover:underline;
+    
+}
+
+.hambuger-line {
+    @apply w-[35px] h-[5px] my-1 block bg-slate-100 rounded-full transition duration-300
+}
+
+.hambuger-active>span:nth-child(1) {
+    @apply transform rotate-[32deg];
+}
+
+.hambuger-active>span:nth-child(2) {
+    @apply transform scale-0;
+}
+
+.hambuger-active>span:nth-child(3) {
+    @apply transform -rotate-[32deg];
+}
+
+.wrap-normal {
+    word-wrap: normal;
+}
+
+.nav-link {
+    @apply text-slate-100 text-lg transition duration-150 hover:text-sky-400 hover:underline
+}

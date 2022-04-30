@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="dist/output.css">
+</head>
+
+<body>
+
+    <main id="main-doc">
+
+        <div class="fixed flex items-center px-4 z-20">
+            <button class="block absolute left-4 top-4 z-20 lg:hidden" id="hambuger">
+                <span class="hambuger-line origin-top-left"></span>
+                <span class="hambuger-line"></span>
+                <span class="hambuger-line origin-bottom-left"></span>
+            </button>
+        </div>
+
+        <nav id="navbar" class="hidden lg:block">
+            <header id="header" class="bg-sky-800 pt-12 pb-8 px-4 h-full fixed z-10">
+                <div class="text-slate-100">
+                    <h1 class="text-4xl font-bold tracking-wide">CSS</h1>
+                </div>
+
+                <ul class="mt-8">
+                    <li>
+                        <a href="#What_is_CSS?" class="nav-link">What is CSS?</a>
+                    </li>
+                    <li>
+                        <a href="#What_is_CSS_for?" class="nav-link">What is CSS for?</a>
+                    </li>
+                    <li>
+                        <a href="#CSS_syntax" class="nav-link">CSS syntax</a>
+                    </li>
+                    <li>
+                        <a href="#Adding_CSS_to_our_document" class="nav-link">Adding CSS to our document</a>
+                    </li>
+                    <li>
+                        <a href="#Styling_HTML_elements" class="nav-link">Styling HTML elements</a>
+                    </li>
+                    <li>
+                        <a href="#Adding_a_class" class="nav-link">Adding a class</a>
+                    </li>
+                    <li>
+                        <a href="#Styling_things_based_on_their_location" class="nav-link">Styling things based on their location</a>
+                    </li>
+                    <li>
+                        <a href="#Styling_things_based_on_state" class="nav-link">Styling things based on state</a>
+                    </li>
+                    <li>
+                        <a href="#Reference" class="nav-link">Reference</a>
+                    </li>
+                </ul>
+            </header>
+        </nav>
+
+
+        <section id="What_is_CSS?" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">What is CSS?</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+                <p class="mb-2"><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS"
+                        class="font-bold hover:text-sky-400 hover:underline">CSS</a> (Cascading Style Sheets) allows you
+                    to create great-looking web pages, but how does it work under the hood? This
+                    article explains what CSS is with a simple syntax example and also covers some key terms about the
+                    language.</p>
+                <p>In the Introduction to HTML module, we covered what HTML is and how it is used to mark up documents.
+                    These documents
+                    will be readable in a web browser. Headings will look larger than regular text, paragraphs break
+                    onto a new line and
+                    have space between them. Links are colored and underlined to distinguish them from the rest of the
+                    text. What you are
+                    seeing are the browser's default styles — very basic styles — that the browser applies to HTML to
+                    make sure that the
+                    page will be basically readable even if no explicit styling is specified by the author of the page.
+                </p>
+            </div>
+        </section>
+
+        <section id="What_is_CSS_for?" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">What is CSS for?</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+                <p class="mb-2">A document is usually a text file structured using a markup language — HTML is the most
+                    common markup language, but you
+                    may also come across other markup languages such as SVG or XML.</p>
+                <p>CSS can be used for very basic document text styling — for example, for changing the color and size
+                    of headings and
+                    links. It can be used to create a layout — for example, turning a single column of text into a
+                    layout with a main
+                    content area and a sidebar for related information. It can even be used for effects such as
+                    animation. Have a look at
+                    the links in this paragraph for specific examples.</p>
+            </div>
+        </section>
+
+        <section id="CSS_syntax" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem] ">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">CSS syntax</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+                <p class="mb-2">CSS is a rule-based language — you define the rules by specifying groups of styles that
+                    should be applied to particular
+                    elements or groups of elements on your web page.</p>
+                <p>For example, you can decide to have the main heading on your page to be shown as large red text. The
+                    following code
+                    shows a very simple CSS rule that would achieve the styling described above:</p>
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">h1</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> red;
+                    </div>
+                    <div class="teks-3 indent-4">
+                        <span class="text-red-400">font-size</span>
+                        <span class="text-stone-400">:</span> 5em;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+
+                </code>
+
+                <p class="">CSS properties have different allowable values, depending on which property is being
+                    specified. In
+                    our example, we have
+                    the <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90 -z-10">color</span> property,
+                    which
+                    can take various color values. We also have the <span
+                        class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90 -z-[20]">font-size</span> property.
+                    This
+                    property can take
+                    various size units as a value.</p>
+            </div>
+        </section>
+
+        <section id="Adding_CSS_to_our_document" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Adding CSS to our document</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+
+                <p class="mb-2">The very first thing we need to do is to tell the HTML document that we have some CSS
+                    rules we want it to use. There are
+                    three different ways to apply CSS to an HTML document that you'll commonly come across, however, for
+                    now, we will look
+                    at the most usual and useful way of doing so — linking CSS from the head of your document.</p>
+
+                <p class="mb-2">Create a file in the same folder as your HTML document and save it as <span
+                        class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">styles.css</span>. The <span
+                        class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">.css</span> extension shows that
+                    this is
+                    a CSS file.</p>
+
+                <p>To link <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">styles.css</span> to
+                    <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">index.html</span>, add the
+                    following line somewhere inside the <span class="underline text-blue-400">
+                        <</span> <span class="underline text-blue-400">head
+                    </span><span class="underline text-blue-400">></span> of the HTML document:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">link
+                        </span>
+                        <span class="text-orange-400">rel</span>
+                        <span class="text-stone-400 -ml-2">=</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-lime-400 -ml-2">stylesheet</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-orange-400">href</span>
+                        <span class="text-stone-400 -ml-2">=</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-lime-400 -ml-2">style.css</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                </code>
+            </div>
+        </section>
+
+        <section id="Styling_HTML_elements" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Styling HTML elements</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+
+                <p class="mb-2">By making our heading red, we have already demonstrated that we can target and style an
+                    HTML element. We do this by targeting an element selector — this is a selector that directly matches
+                    an HTML element name. To target all paragraphs in the document, you would use the selector <span
+                        class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">p</span>. To turn all paragraphs
+                    green, you would use:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">p</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> green;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+                </code>
+
+                <p>You can target multiple selectors at the same time by separating the selectors with a comma. If you
+                    want all paragraphs and all list items to be green, your rule would look like this:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">p, li</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> green;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+
+                </code>
+            </div>
+        </section>
+        
+        <section id="Adding_a_class" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Adding a class</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+
+                <p class="mb-2">So far, we have styled elements based on their HTML element names. This works as long as
+                    you want all of the elements of that type in your document to look the same. Most of the time that
+                    isn't the case and so you will need to find a way to select a subset of the elements without
+                    changing the others. The most common way to do this is to add a class to your HTML element and
+                    target that class.</p>
+
+                <p>In your HTML document, add a class attribute to the second list item. Your list will now look like
+                    this:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">ul
+                        </span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">li
+                        </span>
+                        <span class="text-stone-400 -ml-2">></span>
+                        <span>Item one</span>
+                        <span class="text-stone-400">
+                            <</span> <span class="text-stone-400 -ml-2">/
+                        </span>
+                        <span class="text-red-400 -ml-2">li</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                    <div class="teks-3 indent-4">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">li
+                        </span>
+                        <span class="text-orange-400">class</span>
+                        <span class="text-stone-400 -ml-2">=</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-lime-400 -ml-2">special</span>
+                        <span class="text-stone-400 -ml-2">"</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                        <span>Item two</span>
+                        <span class="text-stone-400">
+                            <</span> <span class="text-stone-400 -ml-2">/
+                        </span>
+                        <span class="text-red-400 -ml-2">li</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                    <div class="teks-4 indent-4">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">li
+                        </span>
+                        <span class="text-stone-400 -ml-2">></span>
+                        <span>Item</span>
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">em
+                        </span>
+                        <span class="text-stone-400 -ml-2">></span>
+                        three
+                        <span class="text-stone-400">
+                            <</span> <span class="text-red-400 -ml-2">em
+                        </span>
+                        <span class="text-stone-400 -ml-2">></span>
+                        <span class="text-stone-400">
+                            <</span> <span class="text-stone-400 -ml-2">/
+                        </span>
+                        <span class="text-red-400 -ml-2">li</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                    <div class="teks-5">
+                        <span class="text-stone-400">
+                            <</span> <span class="text-stone-400 -ml-2">/
+                        </span>
+                        <span class="text-red-400 -ml-2">ul</span>
+                        <span class="text-stone-400 -ml-2">></span>
+                    </div>
+                </code>
+
+                <p>You can add random class for make good css ex:</p>
+                <ul class="list-disc mx-8">
+                    <li class="text-lime-400">special</li>
+                    <li class="text-lime-400">btn-green</li>
+                    <li class="text-lime-400">nav-bar</li>
+                    <li>and other</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <section id="Styling_things_based_on_their_location" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Styling things based on their location</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+
+                <p class="mb-2">There are times when you will want something to look different based on where it is in the document. There are a number of selectors that can help you here, but for now we will look at just a couple. In our document, there are two <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">em</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> elements — one inside a paragraph and the other inside a list item. To select only an <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">em</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> that is nested inside an <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">li</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> element, you can use a selector called the descendant combinator, which takes the form of a space between two other selectors.</p>
+
+                <p>Add the following rule to your stylesheet:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">li em</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> rebeccapurple;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+                </code>
+
+                <p>This selector will select any <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">em</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> element that is inside (a descendant of) an <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">li</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span>. So in your example document, you should find that the <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">em</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> in the third list item is now purple, but the one inside the paragraph is unchanged.</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">h1 + p</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">font-size</span>
+                        <span class="text-stone-400">:</span> 200%;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+                </code>
+
+            </div>
+        </section>
+
+        <section id="#Styling_things_based_on_state" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Styling things based on state</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+
+                <p class="mb-2">The final type of styling we shall take a look at in this tutorial is the ability to style things based on their state. A straightforward example of this is when styling links. When we style a link, we need to target the <span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90"><</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">a</span><span class="bg-stone-500 bg-opacity-80 px-2 rounded-sm opacity-90">></span> (anchor) element. This has different states depending on whether it is unvisited, visited, being hovered over, focused via the keyboard, or in the process of being clicked (activated). You can use CSS to target these different states — the CSS below styles unvisited links pink and visited links green.</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">a:link</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> pink;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+
+                    <div class="teks-1">
+                        <span class="text-amber-500">a:visited</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">color</span>
+                        <span class="text-stone-400">:</span> green;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+                </code>
+
+                <p>You can change the way the link looks when the user hovers over it, for example by removing the underline, which is achieved by the next rule:</p>
+
+                <code
+                    class="bg-stone-600 break-normal flex flex-col text-left relative wrap-normal leading-loose p-4 m-3 rounded-lg shadow-lg font-mono">
+                    <div class="teks-1">
+                        <span class="text-amber-500">a:hover</span>
+                        <span class="text-yellow-200">{</span>
+                    </div>
+                    <div class="teks-2 indent-4">
+                        <span class="text-red-400">text-decoration</span>
+                        <span class="text-stone-400">:</span> none;
+                    </div>
+                    <span class="text-yellow-200">}</span>
+                </code>
+
+            </div>
+        </section>
+
+        <section id="Reference" class="main-section bg-sky-900 pt-16 pb-16 lg:pl-[26rem]">
+            <header class="px-4 text-slate-100">
+                <h2 class="text-4xl font-semibold mb-4">Reference</h2>
+            </header>
+            <div class="container px-4 text-slate-100">
+                <ul>
+                    <li class="mb-2">
+                        <p>All the documentation in this page is taken from <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn/CSS"
+                                class="text-blue-400 hover:underline">MDN —> Learn to style HTML using CSS </a></p>
+                    </li>
+                    <li>
+                        <p>All the documentation in this page is taken from <a
+                                href="https://developer.mozilla.org/en-US/docs/Learn/CSS"
+                                class="text-blue-400 hover:underline">MDN —> Getting started with CSS</a></p>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="dist/script.js"></script>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
