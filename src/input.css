@@ -27,6 +27,14 @@
     word-wrap: normal;
 }
 
+.main-section {
+    @apply py-16 bg-slate-700 text-slate-100 lg:pl-[25rem]
+}
+
 .nav-link {
-    @apply text-slate-100 text-lg transition duration-150 hover:text-sky-400 hover:underline
+    @apply text-xl text-slate-100 font-semibold hover:bg-slate-500 p-2 underline
+}
+
+.code {
+    @apply flex flex-col flex-wrap bg-stone-600 py-4 rounded-lg shadow-lg mb-2
 }
